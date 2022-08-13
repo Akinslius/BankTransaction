@@ -7,8 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 //DI for DbContext
-builder.Services.AddDbContext<TransactionDbContext>(options => 
-options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection")));
+builder.Services.AddDbContext<TransactionDBContext>(options => 
+options.UseSqlServer(builder.Configuration.GetConnectionString("DbConn")));
 
 var app = builder.Build();
 

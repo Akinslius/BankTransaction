@@ -1,30 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
 namespace BankTransaction.Models
 {
-    public class Transaction
+    public partial class Transaction
     {
-        [Key]
         public int TransactionId { get; set; }
-
-        [Column(TypeName = "nvarchar(12)")]
-        public string AccountNumber { get; set; }
-
-        [Column(TypeName = "nvarchar(100)")]
-        public string BeneficiaryName { get; set; }
-
-        [Column(TypeName = "nvarchar(100)")]
-        public string BankName { get; set; }
-
-        [Column(TypeName = "nvarchar(11)")]
-        public string SWIFTCode { get; set; }
-
+        public string AccountNumber { get; set; } = null!;
+        public string BeneficiaryName { get; set; } = null!;
+        public string BankName { get; set; } = null!;
+        public string Swiftcode { get; set; } = null!;
         public int Amount { get; set; }
-
         public DateTime Date { get; set; }
-
-
-
     }
 }
